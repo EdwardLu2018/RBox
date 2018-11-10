@@ -4,6 +4,9 @@ A automated medicine dispensor and website for pharmacies.
 Link to website:
 https://edwardlu2018.github.io/RBox/
 
+Video:
+https://youtu.be/DiswJqN0c2s 
+
 Uses html, css, javascript, python, and arduino.
 Special thanks to selenium and pyserial
 
