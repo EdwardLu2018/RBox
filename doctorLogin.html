@@ -1,16 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html>
+    <head>
+    <title>Doctor Page</title>
+</head>
     <body>
-        <div id="data"></div>
-        <script language="JavaScript">
-            function processForm()
-            {
-              var parameters = location.search.substring(1).split("&");
-              var temp = parameters[0].split("=");
-              l = unescape(temp[1]);
-              document.getElementById("data").innerHTML = l
-            }
-            processForm();
+        Welcome, <div id="data"></div>
+        <script>
+            var myData = localStorage.getItem("objectToPass");
+            localStorage.removeItem( 'objectToPass' ); // Clear the localStorage
+            document.getElementById("data").innerHTML = myData
         </script>
     </body>
 </html>
