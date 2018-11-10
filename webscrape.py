@@ -2,7 +2,6 @@ from selenium import webdriver
 import time
 import json
 import serial
-import time
 
 ArduinoSerial = serial.Serial('/dev/cu.usbmodem1411', 9600)
 time.sleep(2) # wait for 2 seconds for the communication to get established
