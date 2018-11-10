@@ -108,7 +108,7 @@
                 tempPatientDict[name] = [amountMedA, amountMedB, amountMedC, code];
                 localStorage.removeItem("patientDict");
                 localStorage.setItem("patientDict", JSON.stringify(tempPatientDict));
-            
+                
                 if (password === "qwerty") {
                         var row = table.insertRow(1);
                         var cell0 = row.insertCell(0);
