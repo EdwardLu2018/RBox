@@ -24,7 +24,10 @@
         Welcome,<div id="data"></div>
         
         <h1>Patients:</h1>
-        <button onclick="addPatient()">Add Patient</button>
+        
+        <form action="addPatient.html" method="get">
+            <input type="submit" onclick="return validateForm();" value="Add Patient">
+        </form>
         
         <table id="patientTable">
             <tr>
@@ -36,19 +39,29 @@
         
         <script>
             var doctorID = localStorage.getItem("doctId");
-            localStorage.removeItem("doctId"); // Clear the localStorage
             document.getElementById("data").innerHTML = doctorID;
+            var patientDataDict = localStorage.getItem("patientDataDict");
             
             function addPatient() {
                 var table = document.getElementById("patientTable");
-                var row = table.insertRow(1);
-                var cell1 = row.insertCell(0);
-                var cell2 = row.insertCell(1);
-                var cell3 = row.insertCell(2);
-                cell1.innerHTML = "NEW CELL1";
-                cell2.innerHTML = "NEW CELL2";
-                cell3.innerHTML = "NEW CELL3";
+                
+                for (var patient in patientDataDict) {
+                    var medStr = "";
+                    var patientName = "";
+                    if (dictionary.hasOwnProperty(patient)) {           
+                        medStr.concat(patientDataDict[patient]);
+                        patientName = patient;
+                    }
+                    var row = table.insertRow(1);
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(3);
+                    cell1.innerHTML = patientName;
+                    cell2.innerHTML = medStr;
+                    cell3.innerHTML = medStr;
+                }
             }
+            addPatient()
         </script>
     </body>
 </html>

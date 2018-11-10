@@ -1,9 +1,75 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-    <title><!-- Insert your title here --></title>
-</head>
-<body>
-    <!-- Insert your content here -->
-</body>
+    <head>
+        <title>Add Patient</title>
+        <style>
+            div.ind {
+                text-indent: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Add Patient Form. Sophia Smells!</h1>
+        <form action="doctorView.html" method="get">
+            Patient Name: <input type="text" id="patientName">
+            <br><br>
+            Amount of Perscription needed:
+            <br><br>
+            <div class="ind">
+                LSD:
+                <select name="amountMedA" size="1" id="amountMedA">
+                    <option value="medA0">0</option>
+                    <option value="medA1">1</option>
+                    <option value="medA2">2</option>
+                    <option value="medA3">3</option>
+                </select>
+            </div><br>
+            <div class="ind">
+                Weed:
+                <select name="amountMedB" size="1" id="amountMedB">
+                    <option value="medB0">0</option>
+                    <option value="medB1">1</option>
+                    <option value="medB2">2</option>
+                    <option value="medB3">3</option>
+                </select>
+            </div><br>
+            <div class="ind">
+                Marijuana:
+                <select name="amountMedC" size="1" id="amountMedC">
+                    <option value="medC0">0</option>
+                    <option value="medC1">1</option>
+                    <option value="medC2">2</option>
+                    <option value="medC3">3</option>
+                </select>
+            </div>
+            <br>
+            Password: <input type="password" id="pwd" maxlength="10">
+            <br>
+            <input type="submit" onclick="return validateForm();">
+        </form>
+        
+        <script>
+            function validateForm() {
+                var name = document.getElementById("patientName").value;
+                var amountMedA = document.getElementById("amountMedA").value;
+                var amountMedB = document.getElementById("amountMedB").value;
+                var amountMedC = document.getElementById("amountMedC").value;
+                var password = document.getElementById("pwd").value;
+                
+                var patientDataDict = {};
+                localStorage.setItem("patientDataDict", patientDataDict);
+                
+                var patientMeds = [amountMedA, amountMedB, amountMedC];
+                patientDataDict[name] = patientMeds;
+                
+                if (password === "qwerty") {
+                    localStorage.setItem("patientDataDict", patientDataDict);
+                    return true;
+                } else {
+                    alert("Password incorrect! Try again!");
+                    return false;
+                }
+            }
+        </script>
+    </body>
 </html>
