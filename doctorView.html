@@ -76,38 +76,52 @@
             var doctorID = localStorage.getItem("doctId");
             document.getElementById("data").innerHTML = doctorID;
             
+            var table = document.getElementById("patientTable");
+            
+            var tempPatientDict = JSON.parse(localStorage.getItem("patientDict"));
+            
+            for (var patient in tempPatientDict){
+                if (tempPatientDict.hasOwnProperty(patient)) { 
+                    var row = table.insertRow(1);
+                    row.insertCell(0);
+                    row.insertCell(1);
+                    row.insertCell(2);
+                    row.insertCell(3);
+                    row.insertCell(4);
+                    
+                    table.rows[1].cells[0].innerHTML = patient; //name
+                    table.rows[1].cells[1].innerHTML = tempPatientDict[patient][0]; //amountMedA
+                    table.rows[1].cells[2].innerHTML = tempPatientDict[patient][1]; //amountMedB
+                    table.rows[1].cells[3].innerHTML = tempPatientDict[patient][2]; //amountMedC
+                    table.rows[1].cells[4].innerHTML = tempPatientDict[patient][3]; //code
+                }
+            }
+            
             function addPatient() {
                 var name = document.getElementById("patientName").value;
                 var amountMedA = document.getElementById("amountMedA").value;
                 var amountMedB = document.getElementById("amountMedB").value;
                 var amountMedC = document.getElementById("amountMedC").value;
-                var password = document.getElementById("pwd").value;
-                var table = document.getElementById("patientTable");
                 var code = Math.floor(Math.random() * 100000);
+                var password = document.getElementById("pwd").value;
                 
-                var tempPatientDict = JSON.parse(localStorage.getItem("patientDict"));
                 tempPatientDict[name] = [amountMedA, amountMedB, amountMedC, code];
                 localStorage.removeItem("patientDict");
                 localStorage.setItem("patientDict", JSON.stringify(tempPatientDict));
-                var patientDict = JSON.parse(localStorage.getItem("patientDict"));
-                                
+            
                 if (password === "qwerty") {
-                    for (var patient in tempPatientDict){
-                        if (patientDict.hasOwnProperty(patient)) { 
-                            var row = table.insertRow(1);
-                            row.insertCell(0);
-                            row.insertCell(1);
-                            row.insertCell(2);
-                            row.insertCell(3);
-                            row.insertCell(4);
-                            
-                            table.rows[1].cells[0].innerHTML = patient; //name
-                            table.rows[1].cells[1].innerHTML = patientDict[patient][0]; //amountMedA
-                            table.rows[1].cells[2].innerHTML = patientDict[patient][1]; //amountMedB
-                            table.rows[1].cells[3].innerHTML = patientDict[patient][2]; //amountMedC
-                            table.rows[1].cells[4].innerHTML = patientDict[patient][3]; //code
-                        }
-                    }
+                        var row = table.insertRow(1);
+                        var cell0 = row.insertCell(0);
+                        var cell1 = row.insertCell(1);
+                        var cell2 = row.insertCell(2);
+                        var cell3 = row.insertCell(3);
+                        var cell4 = row.insertCell(4);
+                        
+                        cell0.innerHTML = name
+                        cell1.innerHTML = tempPatientDict[name][0]
+                        cell2.innerHTML = tempPatientDict[name][1]
+                        cell3.innerHTML = tempPatientDict[name][2]
+                        cell4.innerHTML = tempPatientDict[name][3]
                 }
                 else {
                     alert("Unable to add Patient. Password incorrect! Try again!");
