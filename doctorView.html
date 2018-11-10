@@ -18,15 +18,59 @@
         tr:nth-child(even) {
             background-color: #dddddd;
         }
+
+        .navBar
+        {
+        margin:0px;
+           width:100%p;
+           height:43px;
+           border:1px 
+           solid #e0e0e0; 
+           background-color: #e0e0e0;
+        }
+
+        }
+       .button1 
+       {
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            border-radius: 4px;
+            font-size: 36px;
+
+        }
+
+        .button1:hover 
+        {
+            background-color: #e7e7e7; 
+            color: white;
+            font-size: 36px;
+        }
+
+        .patBut
+        {
+            font-size: 36px;
+        }
+        #toggle
+        {
+
+            display: none;
+        }
     </style>
 </head>
     <body>
+        <div class = "navBar">
+           <form action="index.html">
+                <button class = "button1" >Home</button>
+            </form>
+        </div>
+        <br>
         Welcome,<div id="data"></div>
         
-        <h1>Add Patients:</h1>
+        <h1><button class = "patBut" onclick = "toggle();">Add Patients:</button></h1>
+    <div id = "toggle">
         Patient Name: <input type="text" id="patientName">
         <br><br>
-        Amount of Perscription needed:
+        Amount of Prescription needed:
         <br><br>
         <div class="ind">
             LSD:
@@ -59,7 +103,7 @@
         Password: <input type="password" id="pwd" maxlength="10">
         <br><br>
         <button onclick="addPatient();">Add Patient</button>
-        
+    </div>
         <h1>Patients:</h1>
         <table id="patientTable">
             <tr>
@@ -127,6 +171,16 @@
                     alert("Password incorrect! Unable to add Patient. Try again!");
                 }
             }
+
+        function toggle(){
+            var off=document.getElementById('toggle');
+            if (off.style.display == "none") {
+                off.style.display = "block";
+            } else {
+                off.style.display = "none";
+            }        
+                }
+
         </script>
     </body>
 </html>
