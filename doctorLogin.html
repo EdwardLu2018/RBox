@@ -18,12 +18,8 @@
     return params;
     }
     params = getParams();
-    firstname = unescape(params["firstname"]);
-    lastname = unescape(params["lastname"]);
-    age = unescape(params["age"]);
-    document.write("firstname = " + firstname + "<br>");
-    document.write("lastname = " + lastname + "<br>");
-    document.write("age = " + age + "<br>");
+    firstname = unescape(params["name"]);
+    document.write("name = " + name + "<br>");
 </script>
 </body>
 </html>
