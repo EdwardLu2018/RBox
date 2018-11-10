@@ -4,28 +4,29 @@
         <title>Customer Login</title>
     </head>
     <body>
-        Enter your full name and doctor's code:
+        <center>Enter your full name and doctor's code:</center>
         <form action="customerView.html" method="get">
             <center>Name: <input type="text" id="name"><br></center>
-            <center>code: <input type="password" id="code" maxlength="10"><br></center>
+            <center>Code: <input type="password" id="code" maxlength="10"><br></center>
             <center><input type="submit" onclick="return validateForm();"></center>
         </form>
         
         <script>
+            var patientDict = JSON.parse(localStorage.getItem("patientDict"));
             function validateForm() {
                 var name, code;
                 name = document.getElementById("name").value;
                 code = document.getElementById("code").value;
                 
-                // change to loop through dictionary
-                if (name == "elu2" && password === "qwerty") {
-                    localStorage.setItem("objectToPass", doctorId);
-                    return true;
-                } else {
-                    alert("Password or ID incorrect! Try again!");
-                    return false;
+                for(var patient in patientDict) {
+                    if (name === patient && String(patientDict[patient][3]) === code) {
+                        localStorage.removeItem("currentPatient");
+                        localStorage.setItem("currentPatient", patient);
+                        return true;
+                    }
                 }
-                //
+                alert("Name or code incorrect! Try again!");
+                return false;
             }
         </script>
     </body>
