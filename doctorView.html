@@ -83,12 +83,17 @@
                 var amountMedC = document.getElementById("amountMedC").value;
                 var password = document.getElementById("pwd").value;
                 var table = document.getElementById("patientTable");
-                var code = Math.floor(Math.random() * 100000)
+                var code = Math.floor(Math.random() * 100000);
                 
-                var patientDict = JSON.parse(window.localStorage.getItem("patientDict"));
-                patientDict[name] = [amountMedA, amountMedB, amountMedC, code];
-                localStorage.setItem("patientDict", JSON.stringify(patientDict));
-                alert(patientDict[name])
+                var tempPatientDict = JSON.parse(localStorage.getItem("patientDict"));
+                tempPatientDict[name] = [amountMedA, amountMedB, amountMedC, code];
+                localStorage.removeItem("patientDict");
+                localStorage.setItem("patientDict", JSON.stringify(tempPatientDict));
+                
+                for (var key in tempPatientDict){
+                    alert(key);
+                    alert(tempPatientDict[key]);
+                };
                 
                 if (password === "qwerty") {
                     var row = table.insertRow(1);
@@ -102,7 +107,8 @@
                     cell3.innerHTML = amountMedB;
                     cell4.innerHTML = amountMedC;
                     cell5.innerHTML = code;
-                } else {
+                }
+                else {
                     alert("Unable to add Patient. Password incorrect! Try again!");
                 }
             }
