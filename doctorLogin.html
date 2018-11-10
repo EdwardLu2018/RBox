@@ -1,16 +1,46 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Doctor Login</title>
-    </head>
-    
-    <body>
-	<h2>HTML Image</h2>
-<img src="drsonice.jpeg" alt="Trulli" width="493" height="335">
+	<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			.container {
+  		 	 	position: relative;
+    				font-family: Arial;
+			}
+
+			.text-block {
+  				position: absolute;
+  				top: 20px;
+  				right: 30%;
+ 				background-color: skyblue;
+ 				color: white;
+ 				padding-left: 20px;
+				padding-right: 20px;
+				padding-top:20px;
+				padding-bottom: 20px;
+			}
+			img{
+				width: 100 %;
+				height: 100%;
+				opacity: 0.5;
+			}
+
+		</style>
+	</head>
+	<body>
+
+
+		<div class="container">
+  		<img src="drlog.jpeg" alt="it broke can't find de pic" style="width:100%;">
+  		<div class="text-block">
+   		 	<center>Login</center>
+   		 	<p>Please provide your ID and password to start administering care.</p>
+
+
         <form action="doctorView.html" method="get">
             <center>Doctor ID: <input type="text" id="doctorId"><br></center>
             <center>Password: <input type="password" id="pwd" maxlength="10"><br></center>
-            <center><input type="submit" onclick="validateForm();"></center>
+            <center><input type="submit" onclick="return validateForm();"></center>
         </form>
         
         <script>
@@ -18,14 +48,17 @@
                 var doctorId, password;
                 doctorId = document.getElementById("doctorId").value;
                 password = document.getElementById("pwd").value;
-                if (doctorId === "elu2" && password === "qwerty") {
+                if (doctorId == "elu2" && password === "qwerty") {
                     localStorage.setItem("doctId", doctorId);
-                }
-                else {
+                    return true;
+                } else {
                     alert("Password or ID incorrect! Try again!");
+                    return false;
                 }
             }
         </script>
-    </body>
-</html>
+  		</div>
 
+
+</body>
+</html> 
