@@ -8,7 +8,7 @@
         <form action="customerView.html" method="get">
             <center>Name: <input type="text" id="name"><br></center>
             <center>Code: <input type="password" id="code" maxlength="10"><br></center>
-            <center><input type="submit" onclick="validateForm();"></center>
+            <center><input type="submit" onclick="return validateForm();"></center>
         </form>
         
         <script>
@@ -19,11 +19,13 @@
                 code = document.getElementById("code").value;
                 
                 for(var patient in patientDict) {
-                    if (patient === name && patientDict[patient][4] === code) {
+                    if (patientDict.hasOwnProperty(String(name)) && String(patientDict[patient][3]) === code) {
                         localStorage.setItem("currentPatient", patient);
+                        return true;
                     }
                     else {
                         alert("Name or code incorrect! Try again!");
+                        return false;
                     }
                 }
             }
