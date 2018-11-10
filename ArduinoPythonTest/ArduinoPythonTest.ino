@@ -22,23 +22,20 @@ void loop() {
 
   if (data == '2') {
     digitalWrite (motorTwo, HIGH);
-    delay(500);
-    digitalWrite (motorTwo, LOW);
-    delay(500);
+    digitalWrite (motorOne, LOW);
+    digitalWrite (motorZero, LOW);
   }
 
   else if (data == '1') {
+    digitalWrite (motorTwo, LOW);
     digitalWrite (motorOne, HIGH);
-    delay(500);
-    digitalWrite (motorOne, LOW);
-    delay(500);
+    digitalWrite (motorZero, LOW);
   }
 
   else if (data == '0') {
+    digitalWrite (motorTwo, LOW);
+    digitalWrite (motorOne, LOW);
     digitalWrite (motorZero, HIGH);
-    delay(500);
-    digitalWrite (motorZero, LOW);
-    delay(500);
   }
 
 }
