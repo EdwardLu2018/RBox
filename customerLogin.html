@@ -19,15 +19,14 @@
                 code = document.getElementById("code").value;
                 
                 for(var patient in patientDict) {
-                    if (patientDict.hasOwnProperty(String(name)) && String(patientDict[patient][3]) === code) {
+                    if (name === patient && String(patientDict[patient][3]) === code) {
+                        localStorage.removeItem("currentPatient");
                         localStorage.setItem("currentPatient", patient);
                         return true;
                     }
-                    else {
-                        alert("Name or code incorrect! Try again!");
-                        return false;
-                    }
                 }
+                alert("Name or code incorrect! Try again!");
+                return false;
             }
         </script>
     </body>
