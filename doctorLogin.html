@@ -1,25 +1,25 @@
 <!DOCTYPE HTML>
 <html lang="en">
-<head>
-    <title>Doctor Page Thingy</title>
-</head>
-<body>
-    <script>
-    function getParams() {
-    var idx = document.URL.indexOf('?');
-    var params = new Array();
-    if (idx != -1) {
-        var pairs = document.URL.substring(idx+1, document.URL.length).split('&');
-        for (var i=0; i<pairs.length; i++){
-            nameVal = pairs[i].split('=');
-            params[nameVal[0]] = nameVal[1];
-            }
-    }
-    return params;
-    }
-    params = getParams();
-    firstname = unescape(params["name"]);
-    document.write("name = " + name + "<br>");
-</script>
-</body>
+    <head>
+        <title>Doctor Page Thingy</title>
+    </head>
+    <body>
+        <script>
+        function getParams() {
+        var idx = document.URL.indexOf('?');
+        var params = new Array();
+        if (idx != -1) {
+            var pairs = document.URL.substring(idx+1, document.URL.length).split('&');
+            for (var i=0; i<pairs.length; i++){
+                nameVal = pairs[i].split('=');
+                params[nameVal[0]] = nameVal[1];
+                }
+        }
+        return params;
+        }
+        params = getParams();
+        firstname = unescape(params["name"]);
+        document.write("name = " + name + "<br>");
+    </script>
+    </body>
 </html>
