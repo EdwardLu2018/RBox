@@ -2,3 +2,4 @@
 
 https://edwardlu2018.github.io/R_Box/
 
+slick
