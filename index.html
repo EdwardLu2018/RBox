@@ -55,6 +55,7 @@
         </div>
     </table>
     <script>
+        localStorage.setItem("patientDict", json.stringify({}));
         if (localStorage.getItem("patientDict") === null) {           
             localStorage.setItem("patientDict", json.stringify({}));
         }
