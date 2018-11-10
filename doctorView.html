@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <title>Doctor Page</title>
+</head>
+    <body>
+        Welcome, <div id="data"></div>
+        <script>
+            var myData = localStorage.getItem("objectToPass");
+            localStorage.removeItem( 'objectToPass' ); // Clear the localStorage
+            document.getElementById("data").innerHTML = myData
+        </script>
+    </body>
+</html>

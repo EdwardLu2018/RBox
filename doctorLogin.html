@@ -1,14 +1,30 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-    <title>Doctor Page</title>
-</head>
+        <title>Doctor Login</title>
+    </head>
+    
     <body>
-        Welcome, <div id="data"></div>
+        <form action="doctorView.html" method="get">
+            <center>Doctor ID: <input type="text" id="doctorId"><br></center>
+            <center>Password: <input type="password" id="pwd" maxlength="10"><br></center>
+            <center><input type="submit" onclick="return validateForm()"></center>
+        </form>
+        
         <script>
-            var myData = localStorage.getItem("objectToPass");
-            localStorage.removeItem( 'objectToPass' ); // Clear the localStorage
-            document.getElementById("data").innerHTML = myData
+            function validateForm() {
+                var doctorId, password;
+                doctorId = document.getElementById("doctorId").value;
+                password = document.getElementById("pwd").value;
+                if (doctorId == "elu2" && password === "qwerty") {
+                    localStorage.setItem("objectToPass", doctorId);
+                    return true
+                } else {
+                    alert("Password or ID incorrect! Try again!");
+                    return false
+                }
+            }
         </script>
     </body>
 </html>
+
