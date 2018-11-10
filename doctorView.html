@@ -23,50 +23,110 @@
     <body>
         Welcome,<div id="data"></div>
         
-        <h1>Patients:</h1>
+        <h1>Add Patients:</h1>
+        Patient Name: <input type="text" id="patientName">
+        <br><br>
+        Amount of Perscription needed:
+        <br><br>
+        <div class="ind">
+            LSD:
+            <select name="amountMedA" size="1" id="amountMedA">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div><br>
+        <div class="ind">
+            Weed:
+            <select name="amountMedB" size="1" id="amountMedB">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div><br>
+        <div class="ind">
+            Marijuana:
+            <select name="amountMedC" size="1" id="amountMedC">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+        <br>
+        Password: <input type="password" id="pwd" maxlength="10">
+        <br><br>
+        <button onclick="addPatient();">Add Patient</button>
         
-        <table>
+        <h1>Patients:</h1>
+        <table id="patientTable">
             <tr>
-              <th>Company</th>
-              <th>Contact</th>
-              <th>Country</th>
+              <td>Patient Full Name</td>
+              <td>Px A</td>
+              <td>Px B</td>
+              <td>Px C</td>
+              <td>Code</td>
             </tr>
-            <tr>
-              <td>Alfreds Futterkiste</td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
-            </tr>
-            <tr>
-              <td>Centro comercial Moctezuma</td>
-              <td>Francisco Chang</td>
-              <td>Mexico</td>
-            </tr>
-            <tr>
-              <td>Ernst Handel</td>
-              <td>Roland Mendel</td>
-              <td>Austria</td>
-            </tr>
-            <tr>
-              <td>Island Trading</td>
-              <td>Helen Bennett</td>
-              <td>UK</td>
-            </tr>
-            <tr>
-              <td>Laughing Bacchus Winecellars</td>
-              <td>Yoshi Tannamuri</td>
-              <td>Canada</td>
-            </tr>
-            <tr>
-              <td>Magazzini Alimentari Riuniti</td>
-              <td>Giovanni Rovelli</td>
-              <td>Italy</td>
-            </tr>
-          </table>
+        </table>
+        <br>
         
         <script>
             var doctorID = localStorage.getItem("doctId");
-            localStorage.removeItem("doctId"); // Clear the localStorage
             document.getElementById("data").innerHTML = doctorID;
+            
+            var table = document.getElementById("patientTable");
+            
+            var tempPatientDict = JSON.parse(localStorage.getItem("patientDict"));
+            
+            for (var patient in tempPatientDict){
+                if (tempPatientDict.hasOwnProperty(patient)) { 
+                    var row = table.insertRow(1);
+                    row.insertCell(0);
+                    row.insertCell(1);
+                    row.insertCell(2);
+                    row.insertCell(3);
+                    row.insertCell(4);
+                    
+                    table.rows[1].cells[0].innerHTML = patient; //name
+                    table.rows[1].cells[1].innerHTML = tempPatientDict[patient][0]; //amountMedA
+                    table.rows[1].cells[2].innerHTML = tempPatientDict[patient][1]; //amountMedB
+                    table.rows[1].cells[3].innerHTML = tempPatientDict[patient][2]; //amountMedC
+                    table.rows[1].cells[4].innerHTML = tempPatientDict[patient][3]; //code
+                }
+            }
+            
+            function addPatient() {
+                var name = document.getElementById("patientName").value;
+                var amountMedA = document.getElementById("amountMedA").value;
+                var amountMedB = document.getElementById("amountMedB").value;
+                var amountMedC = document.getElementById("amountMedC").value;
+                var code = Math.floor(Math.random() * 100000);
+                var password = document.getElementById("pwd").value;
+                
+                tempPatientDict[name] = [amountMedA, amountMedB, amountMedC, code];
+                localStorage.removeItem("patientDict");
+                localStorage.setItem("patientDict", JSON.stringify(tempPatientDict));
+                
+                if (password === "qwerty") {
+                        var row = table.insertRow(1);
+                        var cell0 = row.insertCell(0);
+                        var cell1 = row.insertCell(1);
+                        var cell2 = row.insertCell(2);
+                        var cell3 = row.insertCell(3);
+                        var cell4 = row.insertCell(4);
+                        
+                        cell0.innerHTML = name;
+                        cell1.innerHTML = tempPatientDict[name][0];
+                        cell2.innerHTML = tempPatientDict[name][1];
+                        cell3.innerHTML = tempPatientDict[name][2];
+                        cell4.innerHTML = tempPatientDict[name][3];
+                }
+                else {
+                    alert("Password incorrect! Unable to add Patient. Try again!");
+                }
+            }
         </script>
     </body>
 </html>
