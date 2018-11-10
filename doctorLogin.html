@@ -1,25 +1,30 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html>
     <head>
-        <title>Doctor Page Thingy</title>
+        <title>Doctor Login</title>
     </head>
+    
     <body>
+        <form action="doctorView.html" method="get">
+            <center>Doctor ID: <input type="text" id="doctorId"><br></center>
+            <center>Password: <input type="password" id="pwd" maxlength="10"><br></center>
+            <center><input type="submit" onclick="return validateForm();"></center>
+        </form>
+        
         <script>
-        function getParams() {
-        var idx = document.URL.indexOf('?');
-        var params = new Array();
-        if (idx != -1) {
-            var pairs = document.URL.substring(idx+1, document.URL.length).split('&');
-            for (var i=0; i<pairs.length; i++){
-                nameVal = pairs[i].split('=');
-                params[nameVal[0]] = nameVal[1];
+            function validateForm() {
+                var doctorId, password;
+                doctorId = document.getElementById("doctorId").value;
+                password = document.getElementById("pwd").value;
+                if (doctorId == "elu2" && password === "qwerty") {
+                    localStorage.setItem("doctId", doctorId);
+                    return true;
+                } else {
+                    alert("Password or ID incorrect! Try again!");
+                    return false;
                 }
-        }
-        return params;
-        }
-        params = getParams();
-        firstname = unescape(params["name"]);
-        document.write("name = " + name + "<br>");
-    </script>
+            }
+        </script>
     </body>
 </html>
+

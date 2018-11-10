@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <title>Customer Login</title>
+    </head>
+    <body>
+        Enter your full name and doctor's code:
+        <form action="customerView.html" method="get">
+            <center>Name: <input type="text" id="name"><br></center>
+            <center>code: <input type="password" id="code" maxlength="10"><br></center>
+            <center><input type="submit" onclick="return validateForm();"></center>
+        </form>
+        
+        <script>
+            function validateForm() {
+                var name, code;
+                name = document.getElementById("name").value;
+                code = document.getElementById("code").value;
+                
+                // change to loop through dictionary
+                if (name == "elu2" && password === "qwerty") {
+                    localStorage.setItem("objectToPass", doctorId);
+                    return true;
+                } else {
+                    alert("Password or ID incorrect! Try again!");
+                    return false;
+                }
+                //
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <title>Doctor Page</title>
+</head>
+    <body>
+        Welcome, <div id="data"></div>
+        
+        <script>
+            var doctorID = localStorage.getItem("doctId");
+            localStorage.removeItem("doctId"); // Clear the localStorage
+            document.getElementById("data").innerHTML = doctorID;
+        </script>
+    </body>
+</html>
