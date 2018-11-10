@@ -17,7 +17,7 @@
                 doctorId = document.getElementById("doctorId").value;
                 password = document.getElementById("pwd").value;
                 if (doctorId == "elu2" && password === "qwerty") {
-                    localStorage.setItem("objectToPass", doctorId);
+                    localStorage.setItem("doctId", doctorId);
                     return true;
                 } else {
                     alert("Password or ID incorrect! Try again!");

@@ -5,10 +5,11 @@
 </head>
     <body>
         Welcome, <div id="data"></div>
+        
         <script>
-            var myData = localStorage.getItem("objectToPass");
-            localStorage.removeItem( 'objectToPass' ); // Clear the localStorage
-            document.getElementById("data").innerHTML = myData;
+            var doctorID = localStorage.getItem("doctId");
+            localStorage.removeItem("doctId"); // Clear the localStorage
+            document.getElementById("data").innerHTML = doctorID;
         </script>
     </body>
 </html>
