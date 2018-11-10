@@ -10,7 +10,7 @@
         <form action="doctorView.html" method="get">
             <center>Doctor ID: <input type="text" id="doctorId"><br></center>
             <center>Password: <input type="password" id="pwd" maxlength="10"><br></center>
-            <center><input type="submit" onclick="return validateForm();"></center>
+            <center><input type="submit" onclick="validateForm();"></center>
         </form>
         
         <script>
@@ -18,12 +18,10 @@
                 var doctorId, password;
                 doctorId = document.getElementById("doctorId").value;
                 password = document.getElementById("pwd").value;
-                if (doctorId == "elu2" && password === "qwerty") {
+                if (doctorId === "elu2" && password === "qwerty") {
                     localStorage.setItem("doctId", doctorId);
-                    return true;
                 } else {
                     alert("Password or ID incorrect! Try again!");
-                    return false;
                 }
             }
         </script>

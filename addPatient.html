@@ -45,7 +45,7 @@
             <br>
             Password: <input type="password" id="pwd" maxlength="10">
             <br>
-            <input type="submit" onclick="return validateForm();">
+            <input type="submit" onclick="validateForm();">
         </form>
         
         <script>
@@ -56,9 +56,7 @@
                 var amountMedC = document.getElementById("amountMedC").value;
                 var password = document.getElementById("pwd").value;
                 
-                var patientDataDict = {};
-                localStorage.setItem("patientDataDict", patientDataDict);
-                
+                var patientDataDict = localStorage.getItem("patientDataDict");
                 var patientMeds = [amountMedA, amountMedB, amountMedC];
                 patientDataDict[name] = patientMeds;
                 
