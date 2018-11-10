@@ -4,10 +4,29 @@
 </head>
     <body>
         <form action="doctorLogin.html" method="get">
-            <center>Doctor ID: <input type="text" name="name"><br></center>
-            <center>Password: <input type="password" name="pwd" maxlength="8"><br></center>
-            <center><input type="submit"></center>
+            <center>Doctor ID: <input type="text" id="doctorId"><br></center>
+            <center>Password: <input type="password" id="pwd" maxlength="10"><br></center>
+            <center><input type="submit" onclick="return validateForm()"></center>
         </form>
+        
+        <script>
+            function returnToPreviousPage() {
+                window.history.back();
+            }
+            
+            function validateForm() {
+                var doctorId, password;
+                doctorId = document.getElementById("doctorId").value;
+                password = document.getElementById("pwd").value;
+                if (doctorId == "elu2" && password === "qwerty") {
+                    return true
+                } else {
+                    alert("Password or username incorrect! Try again!");
+                    returnToPreviousPage();
+                    return false
+                }
+            }
+        </script>
     </body>
 </html>
 
