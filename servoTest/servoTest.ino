@@ -46,11 +46,11 @@ void loop() {
     digitalWrite(motorTwo, LOW);
     digitalWrite(motorOne, HIGH);
     digitalWrite(motorZero, LOW);
-    servoB.write(10);
-    delay(500);
     servoB.write(170);
     delay(500);
-    servoC.write(10);
+    servoB.write(10);
+    delay(500);
+    servoC.write(170);
     
   }
 
@@ -58,11 +58,11 @@ void loop() {
     digitalWrite(motorTwo, LOW);
     digitalWrite(motorOne, LOW);
     digitalWrite(motorZero, HIGH);
-    servoA.write(10);
-    delay(500);
     servoA.write(170);
     delay(500);
-    servoC.write(10);
+    servoA.write(10);
+    delay(500);
+    servoC.write(170);
   }
 
 }
