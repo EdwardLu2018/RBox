@@ -44,4 +44,3 @@ while 1:
                     print("MedC dispensed")
                     time.sleep(1)
     currCust = ""
-
