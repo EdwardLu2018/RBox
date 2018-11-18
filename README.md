@@ -1,5 +1,6 @@
 # R_Box
 A automated medicine dispensor and website/interface for pharmacies.
+2nd Place Winner for Hack112 2019!
 
 Link to website:
 https://edwardlu2018.github.io/RBox/
