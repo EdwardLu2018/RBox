@@ -8,7 +8,7 @@ Video:
 https://youtu.be/DiswJqN0c2s 
 
 Uses html, css, javascript, python, and arduino.
-Special thanks to selenium and pyserial
+APIs used: selenium and pyserial
 
 ![alt text](https://github.com/EdwardLu2018/RBox/blob/master/frontPage.png)
 ![alt text](https://github.com/EdwardLu2018/RBox/blob/master/tablePage.png)
