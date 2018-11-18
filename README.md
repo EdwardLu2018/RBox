@@ -5,7 +5,6 @@ Hack112 Fall 2018 2nd Place Winner!
 
 Link to website:
 https://edwardlu2018.github.io/RBox/
-
 (username: elu2, password: qwerty)
 
 Video:
