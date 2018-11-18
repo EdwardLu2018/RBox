@@ -9,7 +9,7 @@ https://edwardlu2018.github.io/RBox/
 Video:
 https://youtu.be/DiswJqN0c2s 
 
-Uses html, css, javascript, python, and arduino.
+Programming languages used: HTML, CSS, Javascript, Python, and Arduino.
 
 APIs used: selenium and pyserial.
 
