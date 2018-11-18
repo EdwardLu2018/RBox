@@ -15,5 +15,7 @@ APIs used: selenium and pyserial.
 
 Special thanks to CMU Roboclub!
 
+Pictures:
+
 ![alt text](https://github.com/EdwardLu2018/RBox/blob/master/frontPage.png)
 ![alt text](https://github.com/EdwardLu2018/RBox/blob/master/tablePage.png)
