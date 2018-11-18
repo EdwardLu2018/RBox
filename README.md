@@ -1,5 +1,5 @@
 # R_Box
-A automated medicine dispensor and website for pharmacies.
+A automated medicine dispensor and website/interface for pharmacies.
 
 Link to website:
 https://edwardlu2018.github.io/RBox/
