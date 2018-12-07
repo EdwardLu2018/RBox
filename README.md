@@ -1,5 +1,5 @@
 # R Box
-An automated medicine dispensor and website/interface for pharmacies.
+An automated medicine dispenser and website/interface for pharmacies.
 
 Hack112 Fall 2018 2nd Place Winner!
 
