@@ -17,5 +17,5 @@ Special thanks to CMU Roboclub!
 
 Pictures:
 
-![alt text](https://github.com/EdwardLu2018/RBox/blob/master/frontPage.png)
-![alt text](https://github.com/EdwardLu2018/RBox/blob/master/tablePage.png)
+![front page](https://github.com/EdwardLu2018/RBox/blob/master/images/frontPage.png)
+![table](https://github.com/EdwardLu2018/RBox/blob/master/images/tablePage.png)
