@@ -1,7 +1,9 @@
-# R Box
+# R-Box
 An automated medicine dispenser and website/interface for pharmacies.
 
 Hack112 Fall 2018 2nd Place Winner!
+
+Created by Edward Lu, Sophia Lau, Carolyn Lee, and Isabel Gardner.
 
 ## Website
 Link to [website](https://edwardlu2018.github.io/RBox/)<br/>
@@ -11,7 +13,7 @@ Link to [website](https://edwardlu2018.github.io/RBox/)<br/>
 Link to [video](https://youtu.be/DiswJqN0c2s)
 
 ## Special Thanks
-APIs: selenium and pyserial
+APIs used: selenium and pyserial
 
 Special thanks to CMU Roboclub!
 
