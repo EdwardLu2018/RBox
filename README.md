@@ -4,7 +4,8 @@ An automated medicine dispenser and website/interface for pharmacies.
 Hack112 Fall 2018 2nd Place Winner!
 
 ## Website
-Link to [website](https://edwardlu2018.github.io/RBox/) (username: elu2, password: qwerty)<br/>
+Link to [website](https://edwardlu2018.github.io/RBox/)<br/>
+(username: elu2, password: qwerty)
 
 ## Video
 Link to [video](https://youtu.be/DiswJqN0c2s)
