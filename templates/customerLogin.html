@@ -1,6 +1,28 @@
 <!DOCTYPE HTML>
 <html lang="en">
-<body background= https://www.incimages.com/uploaded_files/image/1940x900/getty_643024904_20001334181884391236_361786.jpg>
+<head>
+    <style>
+        .prompt
+        {
+        font-family: "Cambria";
+        font-size: 36px
+        
+        }
+        .main
+        {
+            position:absolute;
+            top: 300px;
+            right: 30%;
+            width:90%;
+            margin:auto;
+            height:50%;
+            text-align:center;
+            float: left;
+        
+        }
+    </style>
+</head>
+<body background=https://www.incimages.com/uploaded_files/image/1940x900/getty_643024904_20001334181884391236_361786.jpg>
     <head>
         <title>Customer Login</title>
     </head>
@@ -14,44 +36,5 @@
             <center><input type="submit" onclick="return validateForm();"></center>
         </form>
         </div>
-        <script>
-            var patientDict = JSON.parse(localStorage.getItem("patientDict"));
-            function validateForm() {
-                var name, code;
-                name = document.getElementById("name").value;
-                code = document.getElementById("code").value;
-                
-                for(var patient in patientDict) {
-                    if (name === patient && String(patientDict[patient][3]) === code) {
-                        localStorage.removeItem("currentPatient");
-                        localStorage.setItem("currentPatient", patient);
-                        return true;
-                    }
-                }
-                alert("Name or code incorrect! Try again!");
-                return false;
-            }
-        </script>
     </body>
 </html>
-
-<style>
-.prompt
-{
-font-family: "Cambria";
-font-size: 36px
-
-}
-.main
-{
- position:absolute;
-    top: 300px;
-    right: 30%;
-    width:90%;
-    margin:auto;
-    height:50%;
-    text-align:center;
-    float: left;
-
-}
-</style>

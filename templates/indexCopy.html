@@ -92,7 +92,7 @@
                             <br>
                             <br>
                             <br>
-                    <form action="src/customerLogin.html">
+                    <form action="{{ url_for('customerLogin') }}">
                         <input type="submit" value="Customer Login">
                     </form>
                     <br>
@@ -107,10 +107,5 @@
         </div>
         </div>
     </table>
-    <script>
-        if (localStorage.getItem("patientDict") === null) {           
-            localStorage.setItem("patientDict", JSON.stringify({}));
-        }
-    </script>
     </body>
 </html>

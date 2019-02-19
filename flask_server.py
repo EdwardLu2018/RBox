@@ -9,7 +9,6 @@ app.config['SECRET_KEY'] = "hack112_RBox"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
-
 class patients(db.Model):
     id = db.Column('patient_id', db.Integer, primary_key = True)
     name = db.Column(db.String(50))
@@ -68,6 +67,10 @@ def doctorView():
             flash('patient was successfully added')
             return redirect(url_for('doctorView'))
     return render_template('doctorView.html', patients = patients.query.all())
+
+@app.route('/customerLogin', methods = ['GET', 'POST'])
+def customerLogin():
+    return render_template('customerLogin.html', patients = patients.query.all())
 
 if __name__ == '__main__':
     db.create_all()
