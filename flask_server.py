@@ -21,6 +21,9 @@ class patients(db.Model):
         self.dosageA = dosageA
         self.dosageB = dosageB
         self.dosageC = dosageC
+    
+    def __repr__(self):
+        return self.name
 
 class doctors(db.Model):
     id = db.Column('doctor_id', db.Integer, primary_key = True)
@@ -59,8 +62,7 @@ def doctorView():
            not request.form['dosageB'] or not request.form['dosageC']:
             flash('Please enter all the fields', 'error')
         else:
-            patient = patients(name=request.form['name'], dosageA=request.form['dosageA'],
-                                 dosageB=request.form['dosageB'], dosageC=request.form['dosageC'])
+            patient = patients(name=request.form['name'])
             db.session.add(patient)
             db.session.commit()
             print(patients.query.all(), file=sys.stderr)
