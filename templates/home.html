@@ -3,109 +3,96 @@
     <head>
         <title>Start Page</title>
         <style>
-
         .box {
             position:relative;
             width:60%;
             float: left;
             height:100%;
             text-align:center;
-
         }
-        .boxtwo
-            {
+        .boxtwo {
             position:relative;
             width:0%;
             margin:auto;
             float:right;
             height:100%;
             text-align:center;
-
-
         }
-        .inbox{
+        .inbox {
             position:relative;
             width:50%;
             margin:auto;
             height:50%;
             text-align:center;
-
         }
-
-        .inboxone{
-            position:relative;
-            width:90%;
-            margin:auto;
-            height:50%;
-            text-align:center;
-
-        }
-        .doctorButton{
+        .inboxone {
             position:relative;
             width:90%;
             margin:auto;
             height:50%;
             text-align:center;
         }
-
+        .doctorButton {
+            position:relative;
+            width:90%;
+            margin:auto;
+            height:50%;
+            text-align:center;
+        }
         .tab{
          position:relative;
             width:40%;
             margin:5%;
             height:100%;
             text-align:center;
-
         }
         </style>
     </head>
     <body background= "https://www.ghs.org/wp-content/uploads/2011/08/iStock_000058514058_Medium.jpg">
-        <div class = "tab">
-        <table style = "width:100%";>
-            <div class = "box" align = "center" >
-                <div style="width:350px;height:650px;border:1px solid #e0e0e0; background-color: #fff"> <br><br>
-
-                    <img src = "static/RBoxLogo.png" style = "width:50%">
-                    <br>
-                    <br>
-                    <div class = "inbox" style="width:300px;height:50px;border:1px solid #e0e0e0; background-color: #ff0000">
-                        <h3 class = "inboxone" style = "font-family: calibri;color:#fff">
-                        Log in to see your patients<br>and manage their prescriptions.
-                         </h3>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+        <div class="tab">
+            <table style="width:100%;">
+                <div class="box" align="center" >
+                    <div style="width:350px; height:650px; border:1px solid #e0e0e0; background-color: #fff">
+                        <br><br>
+                        <img src="static/RBoxLogo.png" style="width:50%">
+                        <br><br>
+                        <div class="inbox" style="width:300px; height:50px; border:1px solid #e0e0e0; background-color: #ff0000">
+                            <h3 class="inboxone" style="font-family: calibri;color:#fff">
+                                Log in to see your patients
+                                <br>
+                                and manage their prescriptions.
+                            </h3>
+                            <br><br><br><br>
+                        </div>
+                        <div class="doctorButton">
+                            <br>
+                            <form action="{{ url_for('doctorLogin') }}">
+                                <input type="submit">
+                            </form>
+                            <br>
+                                <h3 style="color:#000">
+                                    ------- OR -------
+                                </h3>
+                            <br>
+                            <div class = "inbox" style="width:300px;height:50px;border:1px solid #e0e0e0; background-color: #ff0000">
+                                <h3 class = "inboxone" style = "font-family: calibri;color:#fff">
+                                    Input your code to 
+                                    <br>
+                                    receive your prescription!
+                                </h3>
+                                <br><br><br><br>
+                                <form action="{{ url_for('customerLogin') }}">
+                                    <input type="submit" value="Customer Login">
+                                </form>
+                                <br><br><br>
+                                <h4 = class = "inbox"style = "font-family: calibri;color:#898989">
+                                    By using RBox, you agree to our Terms, Data Policy, and Cookies Policy.
+                                </h4>
+                            </div>
+                        </div>
                     </div>
-                    <div class="doctorButton">
-                        <br>
-                        <form action="{{ url_for('doctorLogin') }}">
-                           <input type="submit">
-                        </form>
-                        <br>
-                            <h3 style = "color:#000">
-                                ------- OR ------- </h3>
-                    <br>
-                    <div class = "inbox" style="width:300px;height:50px;border:1px solid #e0e0e0; background-color: #ff0000">
-                        <h3 class = "inboxone" style = "font-family: calibri;color:#fff">
-                            Input your code to <br>receive your prescription! </h3>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                    <form action="{{ url_for('customerLogin') }}">
-                        <input type="submit" value="Customer Login">
-                    </form>
-                    <br>
-                    <br>
-                    <br>
-                    <h4 = class = "inbox"style = "font-family: calibri;color:#898989">By using RBox, you agree to our Terms, Data Policy, and Cookies Policy.</h4>
-                </div>
-                </div>
+                </div>       
             </div>
-            </div>       
-            </div>
-        </div>
-        </div>
-    </table>
+        </table>
     </body>
 </html>

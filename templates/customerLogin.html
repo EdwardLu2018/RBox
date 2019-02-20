@@ -1,40 +1,37 @@
 <!DOCTYPE HTML>
-<html lang="en">
-<head>
-    <style>
-        .prompt
-        {
-        font-family: "Cambria";
-        font-size: 36px
-        
-        }
-        .main
-        {
-            position:absolute;
-            top: 300px;
-            right: 30%;
-            width:90%;
-            margin:auto;
-            height:50%;
-            text-align:center;
-            float: left;
-        
-        }
-    </style>
-</head>
-<body background=https://www.incimages.com/uploaded_files/image/1940x900/getty_643024904_20001334181884391236_361786.jpg>
+<html>
+    <head>
+        <style>
+            .prompt {
+            font-family: "Cambria";
+            font-size: 36px
+            
+            }
+            .main {
+                position:absolute;
+                top: 300px;
+                right: 30%;
+                width:90%;
+                margin:auto;
+                height:50%;
+                text-align:center;
+                float: left;
+            }
+        </style>
+    </head>
+    <body background=https://www.incimages.com/uploaded_files/image/1940x900/getty_643024904_20001334181884391236_361786.jpg>
     <head>
         <title>Customer Login</title>
     </head>
     <body>
         <br><br><br><br>
         <div class = "main">
-        <center class = "prompt ">Enter your full name <br> and doctor's code:</center>
-        <form action="customerView.html" method="get">
-            <center>Name: <input type="text" id="name"><br></center>
-            <center>Code: <input type="password" id="code" maxlength="10"><br></center>
-            <center><input type="submit" onclick="return validateForm();"></center>
-        </form>
+            <center class = "prompt ">Enter your full name <br> and doctor's code:</center>
+            <form action="customerView.html" method="get">
+                <center>Name: <input type="text" id="name"><br></center>
+                <center>Code: <input type="password" id="code" maxlength="10"><br></center>
+                <center><input type="submit" onclick="return validateForm();"></center>
+            </form>
         </div>
     </body>
 </html>

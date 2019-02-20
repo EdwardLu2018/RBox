@@ -43,14 +43,16 @@
 		<div class="container">
   		<img src="static/drlog.jpeg" alt="picture not found" style="width:100%;">
   		<div class="text-block">
-   		 	<center>Login
-   		 	<p>Please provide your ID and password to start administering care.</p>
-        <form action="{{ request.path }}" method="post">
-            <center><label for = "name">Doctor ID: </label><input type="text" name="name"><br></center>
-            <center><label for = "password">Password: <input type="password" name="password" maxlength="10"><br></center>
-            <center><input type="submit"></center>
-        </form>
-        </center>
-  		</div>
+   		 	<center>
+					Login
+					<p>Please provide your ID and password to start administering care.</p>
+					<form action="{{ request.path }}" method="post">
+							<center><label for = "name">Doctor ID: </label><input type="text" name="name"><br></center>
+							<center><label for = "password">Password: <input type="password" name="password" maxlength="10"><br></center>
+							<center><input type="submit"></center>
+					</form>
+				</center>
+			</div>
+  	</div>
   </body>
 </html> 

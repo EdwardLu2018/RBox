@@ -58,51 +58,51 @@
                 <button class = "button1" >Home</button>
             </form>
         </div>
-
-        <br>        
+        <br>     
         <button class = "patBut" onclick = "toggle();">Add Patients:</button>
-    
-        <form action = "{{ request.path }}" method = "post">
         <div id = "toggle">
-            <br>
-            Patient Name: <input type="text" id="patientName" name="name">
-            <br><br>
-            Amount of Prescription needed:
-            <br><br>
-            <div class="ind">
-                Medicine A:
-                <select size="1" id="amountMedA" name="dosageA">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-            </div><br>
-            <div class="ind">
-                Medicine B:
-                <select size="1" id="amountMedB" name="dosageB">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-            </div><br>
-            <div class="ind">
-                Medicine C:
-                <select size="1" id="amountMedC" name="dosageC">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-            </div>
-            <!-- <br>
-            Password: <input type="password" id="pwd" maxlength="10">
-            <br><br> -->
-            <br>
-            <input type = "submit" value = "Submit" />
-            <br>
-        </form>
+            <form action = "{{ request.path }}" method = "post">
+                <br>
+                Patient Name: <input type="text" id="patientName" name="name">
+                <br><br>
+                Amount of Prescription needed:
+                <br><br>
+                <div class="ind">
+                    Medicine A:
+                    <select size="1" id="amountMedA" name="dosageA">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                <br>
+                <div class="ind">
+                    Medicine B:
+                    <select size="1" id="amountMedB" name="dosageB">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                <br>
+                <div class="ind">
+                    Medicine C:
+                    <select size="1" id="amountMedC" name="dosageC">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                <!-- <br>
+                Password: <input type="password" id="pwd" maxlength="10">
+                <br><br> -->
+                <br>
+                <input type = "submit" value = "Submit" />
+                <br>
+            </form>
         </div>
 
         <table id="patientTable">
@@ -110,10 +110,10 @@
             <tbody>
                 <thead>
                     <tr>
-                       <th>Patient Full Name</th>
-                       <th>Px A</th>
-                       <th>Px B</th>
-                       <th>Px C</th>
+                        <th>Patient Full Name</th>
+                        <th>Px A</th>
+                        <th>Px B</th>
+                        <th>Px C</th>
                     </tr>
                 </thead>
                 {% for patient in patients %}
