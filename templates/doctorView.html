@@ -20,44 +20,38 @@
             tr:nth-child(even) {
                 background-color: #dddddd;
             }
-
-            .navBar
-            {
-            margin:0px;
-            width:100vw;
-            height:50px;
-            border:1px 
-            solid #e0e0e0; 
-            background-color: #e0e0e0;
+            .navBar {
+                margin:0px;
+                width:95vw;
+                height:50px;
+                border:1px 
+                solid #e0e0e0; 
+                background-color: #e0e0e0;
             }
-        .button1 
-            {
+            .button1 {
                 -webkit-transition-duration: 0.4s; /* Safari */
                 transition-duration: 0.4s;
                 border-radius: 4px;
                 font-size: 36px;
 
             }
-            .button1:hover 
-            {
+            .button1:hover {
                 background-color: #e7e7e7; 
                 color: white;
                 font-size: 36px;
             }
-            .patBut
-            {
+            .patBut {
                 font-size: 30px;
             }
-            #toggle
-            {
+            #toggle {
                 display: none;
             }
         </style>
     </head>
     <body>
-        <div class = "navBar">
-           <form action="{{url_for('home')}}">
-                <button class = "button1" >Home</button>
+        <div class="navBar">
+            <form action="{{url_for('home')}}">
+                <button class="button1" >Home</button>
             </form>
         </div>
         <br>     
