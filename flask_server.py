@@ -11,7 +11,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 class patients(db.Model):
     id = db.Column('patient_id', db.Integer, primary_key = True)
-    name = db.Column(db.String(50))
+    name = db.Column(db.String(50), unique=True)
     dosageA = db.Column(db.Integer)
     dosageB = db.Column(db.Integer) 
     dosageC = db.Column(db.Integer)
@@ -28,7 +28,7 @@ class patients(db.Model):
 class doctors(db.Model):
     id = db.Column('doctor_id', db.Integer, primary_key = True)
     name = db.Column(db.String(50))
-    password = db.Column(db.String(10))
+    password = db.Column(db.String(10)) # unique=True
 
     def __init__(self, name, password):
         self.name = name
@@ -38,8 +38,8 @@ class doctors(db.Model):
         return self.password
 
 @app.route('/')
-def init():
-    return render_template('init.html')
+def home():
+    return render_template('home.html')
 
 @app.route('/doctorLogin', methods = ['GET', 'POST'])
 def doctorLogin():
@@ -62,7 +62,8 @@ def doctorView():
            not request.form['dosageB'] or not request.form['dosageC']:
             flash('Please enter all the fields', 'error')
         else:
-            patient = patients(name=request.form['name'])
+            patient = patients(name=request.form['name'], dosageA=request.form['dosageA'], 
+                               dosageB=request.form['dosageA'], dosageC=request.form['dosageA'])
             db.session.add(patient)
             db.session.commit()
             print(patients.query.all(), file=sys.stderr)

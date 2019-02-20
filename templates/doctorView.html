@@ -54,7 +54,7 @@
 </head>
     <body>
         <div class = "navBar">
-           <form action="{{url_for('init')}}">
+           <form action="{{url_for('home')}}">
                 <button class = "button1" >Home</button>
             </form>
         </div>
@@ -130,13 +130,13 @@
         <script>
             function toggle(){
                 var off = document.getElementById('toggle');
-                if (off.style.display === "none") {
+                if (off.style.display == "none") {
                     off.style.display = "block";
-                } else {
+                } 
+                else{
                     off.style.display = "none";
                 }        
             }
-
         </script>
     </body>
 </html>
