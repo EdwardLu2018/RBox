@@ -1,5 +1,5 @@
 # R-Box
-An automated medicine dispenser and website/interface for pharmacies.
+An automated medicine dispenser and website/interface for pharmacies. Planned extension with Flask server using SQLAlchemy for doctor and patient database.
 
 Hack112 Fall 2018 2nd Place Winner!
 
