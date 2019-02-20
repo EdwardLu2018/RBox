@@ -11,7 +11,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 class patients(db.Model):
     id = db.Column('patient_id', db.Integer, primary_key = True)
-    name = db.Column(db.String(50), unique=True)
+    name = db.Column(db.String(50)) #unique=True
     dosageA = db.Column(db.Integer)
     dosageB = db.Column(db.Integer) 
     dosageC = db.Column(db.Integer)
