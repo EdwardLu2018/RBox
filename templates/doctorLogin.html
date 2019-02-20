@@ -47,10 +47,20 @@
    		 	<center>
 					Login
 					<p>Please provide your ID and password to start administering care.</p>
+					
+					<p>
+						{% with errors = get_flashed_messages(category_filter=["error"]) %}
+							{% if errors %}
+								{%- for message in get_flashed_messages() %}
+									{{ message }}
+								{%- endfor %}
+							{% endif %}
+						{% endwith %}
+					</p>
 					<form action="{{ request.path }}" method="post">
 							<center><label for = "name">Doctor ID: </label><input type="text" name="name"><br></center>
 							<center><label for = "password">Password: <input type="password" name="password" maxlength="10"><br></center>
-							<center><input type="submit" value="Doctor Login"></center>
+							<center><input type="submit" value="Login"></center>
 					</form>
 				</center>
 			</div>

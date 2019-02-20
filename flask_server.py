@@ -39,6 +39,9 @@ class Doctor(db.Model):
 
 @app.route('/')
 def home():
+    admin = Doctor(name="elu2", password="qwerty")
+    db.session.add(admin)
+    db.session.commit()
     return render_template('home.html')
 
 @app.route('/doctorLogin', methods = ['GET', 'POST'])
@@ -47,12 +50,15 @@ def doctorLogin():
         if not request.form['name'] or not request.form['password']:
             flash('Please enter all the fields', 'error')
         else:
-            doctor = Doctor(name=request.form['name'], password=request.form['password'])
-            db.session.add(doctor)
-            db.session.commit()
-            print(Doctor.query.all(), file=sys.stderr)
-            flash('Login Successful')
-            return redirect(url_for('doctorView'))
+            newDoctor = Doctor(name=request.form['name'], password=request.form['password'])
+            for doctor in Doctor.query.all():
+                if doctor.name == newDoctor.name and doctor.password == newDoctor.password:
+                    db.session.add(doctor)
+                    db.session.commit()
+                    print(Doctor.query.all(), file=sys.stderr)
+                    return redirect(url_for('doctorView'))
+            flash('Login Unsuccessful', 'error')
+            return redirect(url_for('doctorLogin'))
     return render_template('doctorLogin.html')
 
 @app.route('/doctorView', methods = ['GET', 'POST'])
@@ -67,7 +73,7 @@ def doctorView():
             db.session.add(patient)
             db.session.commit()
             print(Patient.query.all(), file=sys.stderr)
-            flash('patient was successfully added')
+            flash('Patient was successfully added!', 'success')
             return redirect(url_for('doctorView'))
     return render_template('doctorView.html', patients=Patient.query.all())
 

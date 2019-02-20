@@ -107,6 +107,16 @@
             </form>
         </div>
 
+        <p>
+            {% with errors = get_flashed_messages(category_filter=["success"]) %}
+                {% if errors %}
+                    {%- for message in get_flashed_messages() %}
+                        {{ message }}
+                    {%- endfor %}
+                {% endif %}
+            {% endwith %}
+        </p>
+
         <table id="patientTable">
             <h1>Patients: </h1>
             <tbody>
