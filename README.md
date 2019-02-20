@@ -6,7 +6,7 @@ Hack112 Fall 2018 2nd Place Winner!
 Created by [Edward Lu](https://github.com/EdwardLu2018), [Sophia Lau](https://github.com/slau2022), [Carolyn Lee](https://github.com/carolyn1ee), and Isabel Gardner.
 
 ## Website
-[website](![front page](https://github.com/EdwardLu2018/RBox/blob/master/images/frontPage.png))
+[![front page](https://github.com/EdwardLu2018/RBox/blob/master/images/frontPage.png)](https://edwardlu2018.github.io/RBox/)
 (username: elu2, password: qwerty)
 
 ## Video
