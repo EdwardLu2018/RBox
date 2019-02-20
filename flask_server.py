@@ -38,8 +38,8 @@ class doctors(db.Model):
         return self.password
 
 @app.route('/')
-def indexCopy():
-    return render_template('indexCopy.html')
+def init():
+    return render_template('init.html')
 
 @app.route('/doctorLogin', methods = ['GET', 'POST'])
 def doctorLogin():
