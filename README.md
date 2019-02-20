@@ -13,7 +13,7 @@ Created by [Edward Lu](https://github.com/EdwardLu2018), [Sophia Lau](https://gi
 Link to [video](https://youtu.be/DiswJqN0c2s)
 
 ## Special Thanks
-APIs used: selenium and pyserial
+APIs used: Selenium, Pyserial, Flask, SQLAlchemy
 
 Special thanks to CMU Roboclub!
 
