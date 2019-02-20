@@ -53,7 +53,7 @@ def doctorLogin():
             newDoctor = Doctor(name=request.form['name'], password=request.form['password'])
             for doctor in Doctor.query.all():
                 if doctor.name == newDoctor.name and doctor.password == newDoctor.password:
-                    db.session.add(doctor)
+                    db.session.add(newDoctor)
                     db.session.commit()
                     print(Doctor.query.all(), file=sys.stderr)
                     return redirect(url_for('doctorView'))
