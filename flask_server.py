@@ -9,7 +9,7 @@ app.config['SECRET_KEY'] = "hack112_RBox"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
-class patients(db.Model):
+class Patient(db.Model):
     id = db.Column('patient_id', db.Integer, primary_key = True)
     name = db.Column(db.String(50)) #unique=True
     dosageA = db.Column(db.Integer)
@@ -25,7 +25,7 @@ class patients(db.Model):
     def __repr__(self):
         return self.name
 
-class doctors(db.Model):
+class Doctor(db.Model):
     id = db.Column('doctor_id', db.Integer, primary_key = True)
     name = db.Column(db.String(50))
     password = db.Column(db.String(10)) # unique=True
@@ -47,10 +47,10 @@ def doctorLogin():
         if not request.form['name'] or not request.form['password']:
             flash('Please enter all the fields', 'error')
         else:
-            doctor = doctors(name=request.form['name'], password=request.form['password'])
+            doctor = Doctor(name=request.form['name'], password=request.form['password'])
             db.session.add(doctor)
             db.session.commit()
-            print(doctors.query.all(), file=sys.stderr)
+            print(Doctor.query.all(), file=sys.stderr)
             flash('Login Successful')
             return redirect(url_for('doctorView'))
     return render_template('doctorLogin.html')
@@ -62,18 +62,18 @@ def doctorView():
            not request.form['dosageB'] or not request.form['dosageC']:
             flash('Please enter all the fields', 'error')
         else:
-            patient = patients(name=request.form['name'], dosageA=request.form['dosageA'], 
+            patient = Patient(name=request.form['name'], dosageA=request.form['dosageA'], 
                                dosageB=request.form['dosageA'], dosageC=request.form['dosageA'])
             db.session.add(patient)
             db.session.commit()
-            print(patients.query.all(), file=sys.stderr)
+            print(Patient.query.all(), file=sys.stderr)
             flash('patient was successfully added')
             return redirect(url_for('doctorView'))
-    return render_template('doctorView.html', patients = patients.query.all())
+    return render_template('doctorView.html', patients=Patient.query.all())
 
 @app.route('/customerLogin', methods = ['GET', 'POST'])
 def customerLogin():
-    return render_template('customerLogin.html', patients = patients.query.all())
+    return render_template('customerLogin.html', patients=Patient.query.all())
 
 if __name__ == '__main__':
     db.create_all()
