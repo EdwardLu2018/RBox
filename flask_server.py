@@ -83,7 +83,15 @@ def doctorView():
 
 @app.route('/customerLogin', methods = ['GET', 'POST'])
 def customerLogin():
-    return render_template('customerLogin.html', patients=Patient.query.all())
+    if request.method == 'POST':
+        if not request.form['name'] or not request.form['code']:
+                flash('Please enter all the fields', 'error')
+        else:
+            for patient in Patient.query.all():
+                if request.form['name'] == patient.name and request.form['code'] == patient.code:
+                    return render_template('customerView.html')
+            flash('Login Unsuccessful', 'error')
+    return render_template('customerLogin.html')
 
 if __name__ == '__main__':
     db.create_all()

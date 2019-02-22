@@ -28,10 +28,20 @@
         <br><br><br><br>
         <div class="main">
             <center class = "prompt ">Enter your full name <br> and doctor's code:</center>
-            <form action="customerView.html" method="get">
-                <center>Name: <input type="text" id="name"><br></center>
-                <center>Code: <input type="password" id="code" maxlength="10"><br></center>
-                <center><input type="submit" onclick="return validateForm();"></center>
+            <p color="red">
+                {% with errors = get_flashed_messages(category_filter=["error"]) %}
+                    {% if errors %}
+                        {%- for message in get_flashed_messages() %}
+                            {{ message }}
+                        {%- endfor %}
+                    {% endif %}
+                {% endwith %}
+            </p>
+            <form action="{{ request.path }}" method="post">
+                <center>
+                    Name: <input type="text" name="name"><br>
+                    Code: <input type="password" name="code" maxlength="8"><br>
+                          <input type="submit" value="Get Rx"></center>
             </form>
         </div>
     </body>
