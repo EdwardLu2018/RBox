@@ -69,7 +69,7 @@ def doctorView():
             flash('Please enter all the fields', 'error')
         else:
             patient = Patient(name=request.form['name'], dosageA=request.form['dosageA'], 
-                               dosageB=request.form['dosageA'], dosageC=request.form['dosageA'])
+                               dosageB=request.form['dosageB'], dosageC=request.form['dosageC'])
             db.session.add(patient)
             db.session.commit()
             print(Patient.query.all(), file=sys.stderr)
