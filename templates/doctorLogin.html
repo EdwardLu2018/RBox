@@ -48,7 +48,7 @@
 
 				<p>Please provide your ID and password to start administering care.</p>
 				
-				<p color="red">
+				<p style="color:red">
 					{% with errors = get_flashed_messages(category_filter=["error"]) %}
 						{% if errors %}
 							{%- for message in get_flashed_messages() %}

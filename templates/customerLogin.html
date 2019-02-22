@@ -28,7 +28,7 @@
         <br><br><br><br>
         <div class="main">
             <center class = "prompt ">Enter your full name <br> and doctor's code:</center>
-            <p color="red">
+            <p style="color:red">
                 {% with errors = get_flashed_messages(category_filter=["error"]) %}
                     {% if errors %}
                         {%- for message in get_flashed_messages() %}

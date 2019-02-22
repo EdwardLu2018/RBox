@@ -101,7 +101,7 @@
             </form>
         </div>
 
-        <p>
+        <p style="color:green">
             {% with errors = get_flashed_messages(category_filter=["success"]) %}
                 {% if errors %}
                     {%- for message in get_flashed_messages() %}
