@@ -1,7 +1,7 @@
 from __future__ import print_function
 from flask import Flask, request, flash, url_for, redirect, render_template
 from flask_sqlalchemy import SQLAlchemy
-import sys
+import sys, random, string
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
@@ -15,12 +15,14 @@ class Patient(db.Model):
     dosageA = db.Column(db.Integer)
     dosageB = db.Column(db.Integer) 
     dosageC = db.Column(db.Integer)
+    code = db.Column(db.String(8))
 
-    def __init__(self, name, dosageA, dosageB, dosageC):
+    def __init__(self, name, dosageA, dosageB, dosageC, code):
         self.name = name
         self.dosageA = dosageA
         self.dosageB = dosageB
         self.dosageC = dosageC
+        self.code = code
     
     def __repr__(self):
         return self.name
@@ -68,8 +70,10 @@ def doctorView():
            not request.form['dosageB'] or not request.form['dosageC']:
             flash('Please enter all the fields', 'error')
         else:
+            code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
             patient = Patient(name=request.form['name'], dosageA=request.form['dosageA'], 
-                               dosageB=request.form['dosageB'], dosageC=request.form['dosageC'])
+                              dosageB=request.form['dosageB'], dosageC=request.form['dosageC'],
+                              code=code)
             db.session.add(patient)
             db.session.commit()
             print(Patient.query.all(), file=sys.stderr)

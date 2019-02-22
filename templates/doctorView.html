@@ -120,6 +120,7 @@
                         <th>Px A</th>
                         <th>Px B</th>
                         <th>Px C</th>
+                        <th>Code</th>
                     </tr>
                 </thead>
                 {% for patient in patients %}
@@ -128,6 +129,7 @@
                     <td>{{ patient.dosageA }}</td>
                     <td>{{ patient.dosageB }}</td>
                     <td>{{ patient.dosageC }}</td>
+                    <td>{{ patient.code }}</td>
                  </tr>
                 {% endfor %}
             </tbody>
