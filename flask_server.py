@@ -91,6 +91,8 @@ def customerLogin():
         else:
             for patient in Patient.query.all():
                 if request.form['name'] == patient.name and request.form['code'] == patient.code:
+                    db.session.delete(patient)
+                    db.session.commit()
                     return render_template('customerView.html')
             flash('Login Unsuccessful', 'error')
     return render_template('customerLogin.html')
