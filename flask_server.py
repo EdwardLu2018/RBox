@@ -1,10 +1,12 @@
 from __future__ import print_function
 from flask import Flask, request, flash, url_for, redirect, render_template
 from flask_sqlalchemy import SQLAlchemy
-import sys, random, string
+import sys, random, string, os
+basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['WTF_CSRF_ENABLED'] = True
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'database.db')
 app.config['SECRET_KEY'] = "hack112_RBox"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
